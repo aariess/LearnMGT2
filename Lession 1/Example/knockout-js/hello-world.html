@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<script type='text/javascript' src='lib/knockout-2.2.0.debug.js'></script>
+	</head>
+<body onLoad="onLoad()">
+<script type="text/javascript">
+
+function AppViewModel() {
+    this.firstName = ko.observable("Bert");
+    this.lastName = ko.observable("Bertington");
+	this.fullName = ko.computed(function() {
+    return this.firstName() + " " + this.lastName();    
+}, this);
+}
+function onLoad()
+{
+	ko.applyBindings(new AppViewModel());
+}
+
+</script>
+
+<p>First name: <input data-bind="value: firstName" /></p>
+<p>Last name: <input data-bind="value: lastName" /></p>
+
+<p>First name: <strong data-bind="text: firstName"></strong></p>
+<p>Last name: <strong data-bind="text: lastName"></strong></p>
+
+<p>Full name: <strong data-bind="text: fullName"></strong></p>
+
+<!-- trainee need to implement this button to populate data for model to understand the concept data binding concept -->
+<input type="button" onclick="" value="Click here to random a name"></input>
+
+</body>
+</html>
+

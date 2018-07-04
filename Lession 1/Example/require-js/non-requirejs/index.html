@@ -1,0 +1,50 @@
+<html>
+<head>
+    <style type='text/css'>
+        .cycle-slideshow {
+            height: 3em;
+            margin-bottom: 2em;
+            background: #EEE;
+        }
+        .reinit,
+        .prev {
+            display: inline-block;
+            padding: .5em;
+            margin: .5em;
+            background: #EFEFEF;
+            cursor: pointer;
+        }
+    </style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://malsup.github.io/min/jquery.cycle2.min.js"></script>	
+    <script>
+        $( document ).ready(function() {
+            // Manually initialize cycle
+            $('.slideshow').cycle();
+            // Setup a call to the Cycle API
+            $('.reinit').click(function() {
+                $('.slideshow').cycle('reinit');
+                console.log('slideshow should have reinitialized');
+            });
+
+            $('.prev').click(function() {
+                $('.slideshow').cycle('prev');
+                console.log('prev() should have fired');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="slideshow"
+        data-cycle-slides="> .slide">
+        <div class="slide">Slide 1</div>
+        <div class="slide">Slide 2</div>
+    </div>
+    <div>
+        <span class="reinit">Reinitialize slideshow</span>
+        <br/>
+        <span class="prev">Previous</span>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,33 @@
+<html>
+<head>
+    <style type='text/css'>
+        .cycle-slideshow {
+            height: 3em;
+            margin-bottom: 2em;
+            background: #EEE;
+        }
+        .reinit,
+        .prev {
+            display: inline-block;
+            padding: .5em;
+            margin: .5em;
+            background: #EFEFEF;
+            cursor: pointer;
+        }
+    </style>
+    <script data-main="app.js" src="require.js"></script>
+
+</head>
+<body>
+    <div class="slideshow"
+        data-cycle-slides="> .slide">
+        <div class="slide">Slide 1</div>
+        <div class="slide">Slide 2</div>
+    </div>
+    <div>
+        <span class="reinit">Reinitialize slideshow</span>
+        <br/>
+        <span class="prev">Previous</span>
+    </div>
+</body>
+</html>
